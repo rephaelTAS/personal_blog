@@ -1,0 +1,13 @@
+{
+    "title": "Meu Primeiro Artigo",
+    "content": "Conteúdo do artigo...",
+    "date": "2024-12-05",
+    "comments": [
+      {
+        "name": "João",
+        "comment": "Ótimo artigo!",
+        "date": "2024-12-06"
+      }
+    ]
+  }
+  

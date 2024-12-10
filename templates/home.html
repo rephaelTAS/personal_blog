@@ -1,0 +1,47 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .article-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        .article-item a {
+            text-decoration: none;
+            color: black;
+        }
+        .article-item a:hover {
+            text-decoration: underline;
+        }
+        .date {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Personal Blog</h1>
+    <div class="article-list">
+        {% for article in articles %}
+        <div class="article-item">
+            <a href="{{ url_for('article', article_id=loop.index) }}">{{ article.title }}</a>
+            <span class="date">{{ article.date }}</span>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

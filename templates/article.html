@@ -1,0 +1,37 @@
+<!-- templates/article.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ article.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .title {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .date {
+            color: gray;
+            margin-bottom: 20px;
+        }
+        .content {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="article-container">
+        <h1 class="title">{{ article.title }}</h1>
+        <p class="date">{{ article.date }}</p>
+        <div class="content">{{ article.content }}</div>
+    </div>
+</body>
+</html>

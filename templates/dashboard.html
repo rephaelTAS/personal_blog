@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h2>Admin Dashboard</h2>
+    <h3>Articles</h3>
+    <ul>
+        {% for article in articles %}
+            <li>
+                {{ article.title }} - {{ article.date }}
+                <form action="{{ url_for('delete_article', filename=article.title.replace(' ', '_').lower() + '.json') }}" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+                <a href="{{ url_for('edit_article', filename=article.title.replace(' ', '_').lower() + '.json') }}">Edit</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_article') }}">Add New Article</a>
+{% endblock %}
